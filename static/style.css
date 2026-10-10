@@ -1,0 +1,175 @@
+/* General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5ff;
+    color: #292936;
+    line-height: 1.6;
+    padding: 30px 16px;
+}
+
+/* Main heading */
+h1 {
+    text-align: center;
+    color: #6254e8;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+h2 {
+    margin: 30px 0 18px;
+    color: #333344;
+    border-bottom: 2px solid #e4e0ff;
+    padding-bottom: 10px;
+}
+
+/* Form container */
+#postForm {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(68, 55, 160, 0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input fields */
+input,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #dcd9ef;
+    border-radius: 9px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #292936;
+    background: #fcfcff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #6856ed;
+    box-shadow: 0 0 0 3px rgba(104, 86, 237, 0.13);
+}
+
+/* Buttons */
+button {
+    background: #6856ed;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #5141d0;
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 3px solid #a9a0ff;
+    outline-offset: 3px;
+}
+
+#postForm button {
+    width: 100%;
+}
+
+/* Status messages */
+#message {
+    max-width: 700px;
+    margin: 15px auto;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Blog post list */
+#posts {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 260px), 1fr)
+    );
+    gap: 20px;
+}
+
+/* Individual post card */
+#posts article {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid #e8e5fa;
+    box-shadow: 0 4px 15px rgba(68, 55, 160, 0.07);
+    overflow-wrap: anywhere;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+#posts article:hover {
+    box-shadow: 0 8px 22px rgba(68, 55, 160, 0.13);
+    transform: translateY(-3px);
+}
+
+#posts article h3 {
+    color: #5141d0;
+    font-size: 20px;
+}
+
+#posts article p {
+    color: #5f5f70;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    width: 100%;
+}
+
+#posts article button {
+    background: #e94f65;
+    margin-top: auto;
+}
+
+#posts article button:hover {
+    background: #c9344b;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    #postForm {
+        padding: 18px;
+    }
+
+    #posts {
+        grid-template-columns: 1fr;
+    }
+}

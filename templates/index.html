@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog Post Manager</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+<body>
+
+    <h1>Blog Post Manager</h1>
+
+    <form id="postForm">
+        <input
+            type="text"
+            id="title"
+            placeholder="Enter post title"
+            required
+        >
+
+        <textarea
+            id="content"
+            placeholder="Write your blog post here..."
+            required
+        ></textarea>
+
+        <button type="submit">+ Add Post</button>
+    </form>
+
+    <p id="message" role="status" aria-live="polite"></p>
+
+    <h2 style="max-width: 900px; margin-left: auto; margin-right: auto;">
+        Your Blog Posts
+    </h2>
+
+    <div id="posts"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
